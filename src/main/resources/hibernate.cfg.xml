@@ -4,8 +4,8 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
 	<session-factory>
-		<mapping resource="com/keylesson/persistence/User.hbm.xml" />
-		<mapping resource="com/keylesson/persistence/Role.hbm.xml" />
+		<mapping resource="com/admin/persistence/User.hbm.xml" />
+		<mapping resource="com/admin/persistence/Role.hbm.xml" />
 
 	</session-factory>
 </hibernate-configuration>

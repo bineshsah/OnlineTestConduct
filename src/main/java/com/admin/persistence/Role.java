@@ -1,4 +1,4 @@
-package com.keylesson.persistence;
+package com.admin.persistence;
 
 public class Role {
 

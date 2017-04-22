@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="com.keylesson.persistence.User" table="USER">
+    <class name="com.admin.persistence.User" table="USER">
         <id name="userId" type="int">
             <column name="USER_ID" />
             <generator class="identity" />
@@ -28,7 +28,7 @@
 					<comment></comment>
 				</column>
 			</key>
-			<one-to-many class="com.keylesson.persistence.Role" />
+			<one-to-many class="com.admin.persistence.Role" />
 		</set>
     </class>
 </hibernate-mapping>

@@ -1,10 +1,10 @@
-package com.keylesson.manager;
+package com.admin.manager;
 
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import com.keylesson.dao.UserDAO;
-import com.keylesson.model.UserModel;
+import com.admin.dao.UserDAO;
+import com.admin.model.UserModel;
 
 @Named
 public class UserManager {

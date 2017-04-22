@@ -1,4 +1,4 @@
-package com.keylesson.model;
+package com.admin.model;
 
 public class UserModel {
 

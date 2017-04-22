@@ -1,4 +1,4 @@
-package com.keylesson.persistence;
+package com.admin.persistence;
 
 import java.util.HashSet;
 import java.util.Set;

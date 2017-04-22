@@ -1,8 +1,8 @@
-package com.keylesson.dao;
+package com.admin.dao;
 
-import com.keylesson.model.UserModel;
-import com.keylesson.persistence.Role;
-import com.keylesson.persistence.User;
+import com.admin.model.UserModel;
+import com.admin.persistence.Role;
+import com.admin.persistence.User;
 import org.hibernate.SessionFactory;
 import org.springframework.transaction.annotation.Transactional;
 

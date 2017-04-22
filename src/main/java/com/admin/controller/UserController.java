@@ -1,13 +1,13 @@
-package com.keylesson.controller;
+package com.admin.controller;
+
+import com.admin.manager.UserManager;
+import com.admin.model.UserModel;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
-
-import com.keylesson.manager.UserManager;
-import com.keylesson.model.UserModel;
 
 @ManagedBean
 @Named
