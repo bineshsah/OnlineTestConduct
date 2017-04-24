@@ -1,5 +1,7 @@
 package com.admin.model;
-
+/**
+ * Created by binesh on 4/23/2017.
+ */
 public class UserModel {
 
 	private String login;

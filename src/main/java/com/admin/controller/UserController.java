@@ -1,6 +1,6 @@
 package com.admin.controller;
 
-import com.admin.manager.UserManager;
+import com.admin.service.UserService;
 import com.admin.model.UserModel;
 
 import javax.faces.application.FacesMessage;
@@ -8,6 +8,10 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
+
+/**
+ * Created by binesh on 4/23/2017.
+ */
 
 @ManagedBean
 @Named
@@ -24,11 +28,11 @@ public class UserController {
     String name="Please first login";
 
 	@Inject
-	public UserManager userManager;
+	public UserService userService;
 	private UserModel model = new UserModel();
 
-	public void setUserManager(UserManager userManager) {
-		this.userManager = userManager;
+	public void setUserService(UserService userService) {
+		this.userService = userService;
 	}
 
 	public UserModel getModel() {
@@ -47,7 +51,7 @@ public class UserController {
 			if (!model.getPwd().equals(model.getPwdConfirm())) {
 				throw new Exception("Passwords do not match!!");
 			}
-			userManager.addUser(model);
+			userService.addUser(model);
 		} catch (Exception e) {
 			FacesContext.getCurrentInstance().addMessage(
 					null,

@@ -8,8 +8,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.inject.Inject;
 import javax.inject.Named;
-import java.util.HashSet;
-import java.util.Set;
+/**
+ * Created by binesh on 4/23/2017.
+ */
 
 @Named
 @Transactional("transactionManager")
@@ -27,17 +28,20 @@ public class UserDAO {
 		user.setLogin(model.getLogin());
 		user.setPwd(model.getPwd());
 		user.setEnabled(1);
-		Role role = (Role) sessionFactory.getCurrentSession()
+		/*Role role = (Role) sessionFactory.getCurrentSession()
 				.createQuery("from Role where code='ROLE_USER'").uniqueResult();
 		if (role == null) {
-			role = new Role();
-			role.setCode("ROLE_USER");
-			role.setLabel("ROLE FOR SIMPLE ACCESS");
+
 			sessionFactory.getCurrentSession().save(role);
 		}
 		Set<Role> roles = new HashSet<Role>();
-		roles.add(role);
-		user.setRoles(roles);
+		roles.add(role);*/
+
+		Role role = new Role();
+		role.setCode("ROLE_USER");
+		role.setLabel("ROLE FOR SIMPLE ACCESS");
+		user.setRole(role);
+		role.setUser(user);
 		sessionFactory.getCurrentSession().save(user);
 	}
 }

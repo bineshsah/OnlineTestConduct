@@ -1,0 +1,39 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	template="/templates/template.xhtml">
+	<ui:define name="metadata">
+	</ui:define>
+	<ui:define name="content">
+		Select Student Entry
+		<body>
+		<p:commandButton action="#{studentController.showStudent}" value="Click to get students" name="click"/>
+
+
+
+        <p:dataTable var="student" value="#{studentController.studentModel}" reflow="true" rows="5" paginator="true" >
+            <p:column headerText="STUDENT ID">
+                <h:outputText value="#{student.studentID}" />
+            </p:column>
+
+            <p:column headerText="STUDENT NAME">
+                <h:outputText value="#{student.studentName}" />
+            </p:column>
+
+            <p:column headerText="STUDENT EMAIL">
+                <h:outputText value="#{student.email}" />
+            </p:column>
+
+            <p:column headerText="STUDENT GENDER">
+                <h:outputText value="#{student.gender}" />
+            </p:column>
+            <p:column headerText="ACTION">
+                <h:outputText value="GENERATE SSID" />
+            </p:column>
+        </p:dataTable>
+
+		</body>
+	</ui:define>
+</ui:composition>

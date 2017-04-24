@@ -1,15 +1,48 @@
 package com.admin.persistence;
 
+import org.hibernate.annotations.Cascade;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import java.util.HashSet;
 import java.util.Set;
-
+/**
+ * Created by binesh on 4/23/2017.
+ */
+@Entity
+@Table(name="USER")
 public class User {
 
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "USER_ID")
 	private int userId;
+
+    @Column(name = "LOGIN")
 	private String login;
+
+   @Column(name = "PWD")
 	private String pwd;
+
+   @Column(name = "ENABLED")
 	private Integer enabled;
-	private Set<Role> roles = new HashSet<Role>(0);
+
+	public Role getRole() {
+		return role;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
+
+	@OneToOne
+	@Cascade(value=org.hibernate.annotations.CascadeType.SAVE_UPDATE)
+   private Role role;
 
 	public int getUserId() {
 		return userId;
@@ -43,12 +76,6 @@ public class User {
 		this.enabled = enabled;
 	}
 
-	public Set<Role> getRoles() {
-		return roles;
-	}
 
-	public void setRoles(Set<Role> roles) {
-		this.roles = roles;
-	}
 
 }

@@ -49,5 +49,6 @@
     <orderEntry type="library" name="Maven: org.hibernate:hibernate-core:4.1.8.Final" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-tx:3.2.8.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-web:3.2.8.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.hibernate.javax.persistence:hibernate-jpa-2.0-api:1.0.1.Final" level="project" />
   </component>
 </module>
